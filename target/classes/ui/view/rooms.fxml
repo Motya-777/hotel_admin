@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelapp.ui.controllers.RoomsController">
+    <stylesheets>
+        <URL value="@styles/main.css"/>
+    </stylesheets>
+    <top>
+        <Label text="Управление номерами" styleClass="heading" BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+        <TableView fx:id="roomsTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="numberColumn" text="№" minWidth="80"/>
+                <TableColumn fx:id="typeColumn" text="Тип" minWidth="120"/>
+                <TableColumn fx:id="priceColumn" text="Цена (руб.)" minWidth="100"/>
+                <TableColumn fx:id="capacityColumn" text="Мест" minWidth="80"/>
+                <TableColumn fx:id="statusColumn" text="Статус" minWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <VBox spacing="15" styleClass="form-panel">
+            <Label text="Добавить/Редактировать номер" styleClass="section-title"/>
+            <GridPane hgap="15" vgap="12" styleClass="grid-pane">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="100"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+                </columnConstraints>
+                <children>
+                    <Label text="№ комнаты:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="numberField" promptText="101, 101A, 12-03" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    <Label text="Тип номера:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="typeCombo" promptText="Выберите тип номера" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    <Label text="Цена (руб.):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="priceField" promptText="100.0" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    <Label text="Вместимость:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="capacityField" promptText="1-5" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                    <Label text="Статус:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="statusCombo" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                </children>
+            </GridPane>
+            <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false"/>
+            <HBox spacing="10">
+                <Button text="Сохранить" onAction="#handleSave" styleClass="primary"/>
+                <Button text="Удалить" onAction="#handleDelete" styleClass="danger"/>
+                <Button text="Очистить" onAction="#handleClear" styleClass="secondary"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

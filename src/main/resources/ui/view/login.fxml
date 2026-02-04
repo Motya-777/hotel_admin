@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelapp.ui.controllers.LoginController">
+    <stylesheets>
+        <URL value="@styles/main.css"/>
+    </stylesheets>
+    <children>
+        <VBox spacing="20" alignment="CENTER" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+              AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" styleClass="login-panel">
+            <Label text="Hotel Admin" styleClass="heading"/>
+            <VBox spacing="15" alignment="CENTER">
+                <GridPane hgap="15" vgap="12" styleClass="grid-pane">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" minWidth="80"/>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+                    </columnConstraints>
+                    <children>
+                        <Label text="Логин:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="usernameField" promptText="admin" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label text="Пароль:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <PasswordField fx:id="passwordField" promptText="admin123" GridPane.rowIndex="1"
+                                       GridPane.columnIndex="1"/>
+                    </children>
+                </GridPane>
+                <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false"/>
+                <Button text="Войти" onAction="#handleLogin" styleClass="primary" maxWidth="200"/>
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

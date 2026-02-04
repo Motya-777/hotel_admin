@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelapp.ui.controllers.ReportsController">
+    <stylesheets>
+        <URL value="@styles/main.css"/>
+    </stylesheets>
+    <center>
+        <TableView fx:id="reportTable">
+            <columns>
+                <TableColumn fx:id="guestColumn" text="Гость"/>
+                <TableColumn fx:id="roomColumn" text="Номер"/>
+                <TableColumn fx:id="statusColumn" text="Статус"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
+

@@ -1,0 +1,155 @@
+.root {
+    -fx-font-family: "Segoe UI", "Arial";
+    -fx-padding: 16;
+    -fx-background-color: #1d1f27;
+    -fx-text-fill: #e0e6f0;
+}
+
+.side-panel {
+    -fx-padding: 16;
+    -fx-background-color: linear-gradient(to bottom, #242634, #1f212c);
+    -fx-border-color: #2f3244;
+    -fx-border-width: 0 1 0 0;
+}
+
+.form-panel {
+    -fx-padding: 18;
+    -fx-spacing: 12;
+    -fx-background-color: #262a38;
+    -fx-border-color: #2f3444;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgb(0, 0, 0), 12, 0.3, 0, 4);
+}
+
+.heading {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #a6b1d0;
+}
+
+.table-view {
+    -fx-background-color: #232633;
+    -fx-border-color: #2f3444;
+    -fx-table-cell-border-color: #2f3444;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #2d3242, #252837);
+}
+
+.table-view .column-header {
+    -fx-text-fill: #000000;
+    -fx-border-color: transparent;
+}
+
+.table-row-cell {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: rgba(255,255,255,0.02);
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #3c4160;
+    -fx-text-fill: #ffffff;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #ffffff;
+}
+
+.button {
+    -fx-background-radius: 8;
+    -fx-text-fill: #f9fafc;
+    -fx-font-weight: bold;
+    -fx-padding: 10 18 10 18;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0.3, 0, 3);
+    -fx-background-color: linear-gradient(to right, #3f6ef9, #568dff);
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #5882ff, #6d9bff);
+}
+
+.button:pressed {
+    -fx-background-color: #3358c5;
+}
+
+.button.primary {
+    -fx-background-color: linear-gradient(to right, #10a37f, #2dc48f);
+}
+
+.button.primary:hover {
+    -fx-background-color: linear-gradient(to right, #22b691, #38d7a4);
+}
+
+.button.danger {
+    -fx-background-color: linear-gradient(to right, #c0392b, #e74c3c);
+}
+
+.button.secondary {
+    -fx-background-color: linear-gradient(to right, #5c6c7a, #7a8896);
+}
+
+.label {
+    -fx-text-fill: #ffffff;
+}
+
+.label.error-label {
+    -fx-text-fill: #ff8a80;
+}
+
+.combo-box, .text-field, .date-picker {
+    -fx-background-color: #1f2230;
+    -fx-text-fill: #e0e6f0;
+    -fx-border-color: #34384a;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8 12 8 12;
+}
+
+.combo-box:focused, .text-field:focused, .date-picker:focused {
+    -fx-border-color: #5b7cfa;
+    -fx-effect: dropshadow(gaussian, rgba(91,124,250,0.3), 10, 0.3, 0, 4);
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+}
+
+/* Светлый текст на тёмном фоне по умолчанию */
+.label,
+/*.table-view,*/
+.combo-box,
+.text-field,
+.date-picker {
+    -fx-text-fill: #ffffff;
+}
+
+/* Тёмный текст для светлых всплывающих меню и списков */
+.combo-box-popup .list-view,
+.context-menu {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ffffff;
+}
+
+
+.combo-box-popup .list-cell,
+.context-menu .label {
+    -fx-text-fill: #1f2230;
+}
+
+.combo-box-popup .list-cell:filled:hover,
+.combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(to right, #4b6bff, #6c8dff);
+    -fx-text-fill: #ffffff;
+}

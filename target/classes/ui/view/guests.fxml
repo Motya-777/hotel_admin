@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelapp.ui.controllers.GuestsController">
+    <stylesheets>
+        <URL value="@styles/main.css"/>
+    </stylesheets>
+    <top>
+        <Label text="Управление гостями" styleClass="heading" BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+        <TableView fx:id="guestsTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Имя" minWidth="200"/>
+                <TableColumn fx:id="passportColumn" text="Паспорт" minWidth="120"/>
+                <TableColumn fx:id="phoneColumn" text="Телефон" minWidth="150"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <VBox spacing="15" styleClass="form-panel">
+            <Label text="Добавить/Редактировать гостя" styleClass="section-title"/>
+            <GridPane hgap="15" vgap="12" styleClass="grid-pane">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="100"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+                </columnConstraints>
+                <children>
+                    <Label text="Имя:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="nameField" promptText="Иван Иванов" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    <Label text="Паспорт:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="passportField" promptText="AB1234567" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    <Label text="Телефон:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="phoneField" promptText="+375 17 123 45 67" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                </children>
+            </GridPane>
+            <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false"/>
+            <HBox spacing="10">
+                <Button text="Сохранить" onAction="#handleSave" styleClass="primary"/>
+                <Button text="Удалить" onAction="#handleDelete" styleClass="danger"/>
+                <Button text="Очистить" onAction="#handleClear" styleClass="secondary"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

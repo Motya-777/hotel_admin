@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelapp.ui.controllers.BookingsController">
+    <stylesheets>
+        <URL value="@styles/main.css"/>
+    </stylesheets>
+    <top>
+        <Label text="Управление бронированиями" styleClass="heading" BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+        <TableView fx:id="bookingsTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="guestColumn" text="Гость" minWidth="200"/>
+                <TableColumn fx:id="roomColumn" text="Номер" minWidth="100"/>
+                <TableColumn fx:id="checkInColumn" text="Заезд" minWidth="120"/>
+                <TableColumn fx:id="checkOutColumn" text="Выезд" minWidth="120"/>
+                <TableColumn fx:id="statusColumn" text="Статус" minWidth="120"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <VBox spacing="15" styleClass="form-panel">
+            <Label text="Создать новое бронирование" styleClass="section-title"/>
+            <GridPane hgap="15" vgap="12" styleClass="grid-pane">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="100"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+                </columnConstraints>
+                <children>
+                    <Label text="Гость:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="guestCombo" promptText="Выберите гостя" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    <Label text="Номер:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="roomCombo" promptText="Выберите номер" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    <Label text="Дата заезда:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <DatePicker fx:id="checkInPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    <Label text="Дата выезда:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <DatePicker fx:id="checkOutPicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                </children>
+            </GridPane>
+            <HBox spacing="10">
+                <Button text="Создать бронь" onAction="#handleCreateBooking" styleClass="primary"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

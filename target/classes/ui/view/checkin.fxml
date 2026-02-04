@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hotelapp.ui.controllers.CheckInController" spacing="15">
+    <stylesheets>
+        <URL value="@styles/main.css"/>
+    </stylesheets>
+    <Label text="Заселение гостей" styleClass="heading"/>
+    <VBox spacing="10" styleClass="form-panel">
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Дата заезда:"/>
+            <DatePicker fx:id="datePicker"/>
+            <Button text="Заселить" onAction="#handleCheckIn" styleClass="primary"/>
+        </HBox>
+    </VBox>
+    <TableView fx:id="checkInTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="guestColumn" text="Гость" minWidth="200"/>
+            <TableColumn fx:id="roomColumn" text="Номер" minWidth="100"/>
+            <TableColumn fx:id="dateColumn" text="Дата заезда" minWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>

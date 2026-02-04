@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hotelapp.ui.controllers.CheckOutController" spacing="15">
+    <stylesheets>
+        <URL value="@styles/main.css"/>
+    </stylesheets>
+    <Label text="Выселение гостей" styleClass="heading"/>
+    <VBox spacing="10" styleClass="form-panel">
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Отметить оплату:"/>
+            <CheckBox fx:id="paidCheck"/>
+            <Button text="Выселить" onAction="#handleCheckOut" styleClass="primary"/>
+        </HBox>
+    </VBox>
+    <TableView fx:id="checkOutTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="guestColumn" text="Гость" minWidth="200"/>
+            <TableColumn fx:id="roomColumn" text="Номер" minWidth="100"/>
+            <TableColumn fx:id="statusColumn" text="Статус" minWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>

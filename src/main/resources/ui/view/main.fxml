@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotelapp.ui.controllers.MainController" fx:id="mainPane">
+    <stylesheets>
+        <URL value="@styles/main.css"/>
+    </stylesheets>
+    <left>
+        <VBox spacing="10" styleClass="side-panel">
+            <Label text="Навигация" styleClass="heading"/>
+            <Separator/>
+            <Button text="Номера" onAction="#openRooms" maxWidth="Infinity"/>
+            <Button text="Гости" onAction="#openGuests" maxWidth="Infinity"/>
+            <Button text="Бронирования" onAction="#openBookings" maxWidth="Infinity"/>
+            <Button text="Заселение" onAction="#openCheckIn" maxWidth="Infinity"/>
+            <Button text="Выселение" onAction="#openCheckOut" maxWidth="Infinity"/>
+            <Button text="Отчёты" onAction="#openReports" maxWidth="Infinity" styleClass="secondary"/>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="contentHolder"/>
+    </center>
+</BorderPane>
